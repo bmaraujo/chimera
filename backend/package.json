@@ -1,0 +1,47 @@
+{
+  "name": "chimera-backend",
+  "version": "1.0.0",
+  "description": "Template using https://medium.com/@gabrieldrouin/node-js-2025-guide-how-to-setup-express-js-with-typescript-eslint-and-prettier-b342cd21c30d",
+  "type": "module",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "dev": "tsx --watch --env-file .env src/index.ts",
+    "start": "node --env-file .env dist/index.js",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest",
+    "test:run": "vitest --run",
+    "test:ui": "vitest --ui",
+    "coverage": "vitest run --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.35.0",
+    "@tsconfig/node22": "^22.0.2",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.5.2",
+    "@vitest/coverage-v8": "^3.2.4",
+    "@vitest/eslint-plugin": "^1.3.12",
+    "eslint": "^9.35.0",
+    "eslint-plugin-perfectionist": "^4.15.0",
+    "prettier": "^3.6.2",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.44.0",
+    "vitest": "^3.2.4"
+  },
+  "imports": {
+    "#*": "./src/*"
+  }
+}
