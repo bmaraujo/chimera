@@ -1,0 +1,22 @@
+{
+  "name": "chimera-backend",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./src/index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "vitest",
+    "test-local": "npx tsc | node dist/engine/testEngine.js"
+  },
+  "keywords": [],
+  "author": "Bruno Araújo",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}
