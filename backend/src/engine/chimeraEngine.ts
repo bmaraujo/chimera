@@ -2,9 +2,9 @@ import fileLoader from "../utils/fileLoader.js";
 import StateMachine from "./stateMachine.js";
 
 export interface TestCase {
+  expectedResult: string;
   initialStateId: string;
   input: string;
-  expectedResult: string;
   result?: boolean;
 }
 
