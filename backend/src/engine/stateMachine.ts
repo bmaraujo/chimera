@@ -1,8 +1,13 @@
-import { RuleConditionEngine, Condition, EvaluationContext } from "./ruleConditionEngine.js";
+/* eslint-disable perfectionist/sort-objects */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/dot-notation */
+import { Condition,  EvaluationContext, RuleConditionEngine } from "./ruleConditionEngine.js";
 
 export default class StateMachine {
-  private readonly ruleEngine: RuleConditionEngine;
   private flow: any;
+  private readonly ruleEngine: RuleConditionEngine;
 
   constructor(flow: any) {
     this.flow = flow;
@@ -20,10 +25,12 @@ export default class StateMachine {
   private executeOutputConditions(stateId: string, input: string, variables: Record<string, any>): boolean{
     const state = this.flow.flow[stateId];
     let result = false;
+    console.log(state);
     for(const conditionOutput of state["$conditionOutputs"]){
+      
       for(const condition of conditionOutput.conditions){
         console.log(`first condition: ${JSON.stringify(condition)}`);
-        let cond: Condition = { source: condition.source, comparison: condition.comparison, values: condition.values};
+        const cond: Condition = { source: condition.source, comparison: condition.comparison, values: condition.values};
         console.log(`Condition translated:${JSON.stringify(cond)}`);
         if(condition.source == "context"){
           cond.variable = condition.variable;
